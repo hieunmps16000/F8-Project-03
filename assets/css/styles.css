@@ -51,6 +51,34 @@ a {
     opacity: 0.9;
 }
 
+.section-heading {
+    color: #10375c;
+    font-family: Sora;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.section-desc {
+    width: 468px;
+    margin-top: 18px;
+    color: #575f66;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.67;
+}
+
+.section-heading__center,
+.section-desc__center {
+    text-align: center;
+}
+
+.section-desc__center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Header */
 .header {
     padding-top: 30px;
@@ -161,7 +189,7 @@ a {
 .hero {
     display: flex;
     align-items: center;
-    margin-top: 76px;
+    padding: 76px 0 110px 0;
 }
 
 .hero__content {
@@ -223,4 +251,74 @@ a {
 .hero__img:last-child {
     width: 210px;
     height: 410px;
+}
+
+/* Service */
+.service {
+    padding: 170px 0;
+}
+
+.service-row {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service__img {
+    display: block;
+    width: 570px;
+    height: 570px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.service__list {
+    margin-bottom: 55px;
+}
+
+.service-item {
+    padding: 22px;
+    width: 470px;
+    display: flex;
+    background: #fff;
+    transition: box-shadow 0.5s;
+}
+
+.service-item:hover {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 14px 28px 0px rgba(0, 0, 0, 0.05);
+}
+
+.service-item__icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    color: #10375c;
+    background: #eff6fd;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.service-item__body {
+    margin-left: 20px;
+}
+
+.service-item__heading {
+    color: #10375c;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.service-item__desc {
+    margin-top: 8px;
+    color: #575f66;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.75;
 }
