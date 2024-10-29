@@ -305,6 +305,11 @@ a {
     transition: color 0.5s, background-color 0.5s;
 }
 
+.service-item:hover .service-item__icon {
+    color: #fff;
+    background: #2e80ce;
+}
+
 .service-item__body {
     margin-left: 20px;
 }
@@ -320,5 +325,61 @@ a {
     color: #575f66;
     font-size: 1.6rem;
     font-weight: 300;
+    line-height: 1.75;
+}
+
+/* Work */
+.work {
+    padding: 100px 0;
+    background: #f6fbff;
+}
+
+.work__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    margin-top: 86px;
+}
+
+.work-item {
+    padding: 16px;
+    border-radius: 4px;
+    background: #eaf6ff;
+    transition: 0.25s;
+}
+
+.work-item:hover {
+    transform: translateY(-16px);
+    background: #2e80ce;
+}
+
+.work-item > div {
+    padding: 42px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.work-item__heading {
+    margin-top: 18px;
+    color: #10375c;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.38;
+}
+
+.work-item__desc {
+    margin-top: 28px;
+    color: #575f66;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+.work-item__more {
+    margin-top: 18px;
+    display: inline-block;
+    color: #2e80ce;
+    font-size: 1.6rem;
+    font-weight: 400;
     line-height: 1.75;
 }
