@@ -51,14 +51,6 @@ a {
     opacity: 0.9;
 }
 
-.section-header__wrap .btn {
-    margin-top: 38px;
-}
-
-.section-header__wrap {
-    text-align: center;
-}
-
 .section-heading {
     color: #10375c;
     font-family: Sora;
@@ -77,11 +69,6 @@ a {
     line-height: 1.67;
 }
 
-.section-header__wrap .section-desc {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .section-controls {
     margin-top: 38px;
     display: flex;
@@ -90,7 +77,7 @@ a {
     column-gap: 18px;
 }
 
-.section-control__icon-wrap {
+.section-control__btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,11 +87,13 @@ a {
     border: 1px solid #575f66;
     cursor: pointer;
     transition: 0.25s;
+    outline: none;
 }
 
-.section-control__icon-wrap:hover {
+.section-control__btn:hover {
     background: #2e80ce;
     border-color: #2e80ce;
+    color: #fff;
 }
 
 .section-control__icon {
@@ -112,11 +101,7 @@ a {
     transition: 0.25s;
 }
 
-.section-control__icon-wrap:hover .section-control__icon {
-    color: #fff;
-}
-
-.section-control__icon--next {
+.section-control__icon-next {
     rotate: 180deg;
 }
 
@@ -299,6 +284,15 @@ a {
     padding: 170px 0;
 }
 
+.service__header {
+    text-align: center;
+}
+
+.service__header .section-desc {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .service-row {
     margin-top: 70px;
     display: flex;
@@ -471,6 +465,10 @@ a {
 /* Dentist */
 .dentist {
     padding: 85px 0;
+}
+
+.dentist .dentist__link {
+    margin-top: 38px;
 }
 
 .dentist__list {
