@@ -479,6 +479,10 @@ a {
     column-gap: 34px;
 }
 
+.dentist-item:hover .dentist-item__img {
+    transform: scale(1.1);
+}
+
 .dentist-item__images {
     background: #eaf6ff;
     padding-top: 28px;
@@ -487,7 +491,11 @@ a {
 
 .dentist-item__img {
     display: block;
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
     border-radius: 6px;
+    transition: 0.25s;
 }
 
 .dentist-item__heading {
