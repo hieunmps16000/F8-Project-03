@@ -753,6 +753,11 @@ button {
     white-space: nowrap;
 }
 
+.footer__item-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 .footer-social {
     margin-bottom: 28px;
     display: flex;
