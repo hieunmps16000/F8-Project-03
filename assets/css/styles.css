@@ -121,7 +121,6 @@ button {
 /* Header */
 .header {
     padding-top: 30px;
-    min-height: 100vh;
     background: var(--header-bg);
 }
 
@@ -131,7 +130,7 @@ button {
     justify-content: space-between;
 }
 
-.logo {
+.logo__inner {
     position: relative;
     display: inline-flex;
     font-size: 1rem;
@@ -228,9 +227,13 @@ button {
 
 /* Hero */
 .hero {
+    padding: 76px 0 110px 0;
+    background: var(--header-bg);
+}
+
+.hero__inner {
     display: flex;
     align-items: center;
-    padding: 76px 0 110px 0;
 }
 
 .hero__content {

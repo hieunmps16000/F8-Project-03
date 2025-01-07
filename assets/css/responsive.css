@@ -1,0 +1,33 @@
+/* PC */
+@media screen and (min-width: 992px) {
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Tablet and mobile */
+@media screen and (max-width: 991.98px) {
+    .navbar {
+        display: none;
+    }
+
+    .header-top {
+        position: relative;
+    }
+
+    .header-top .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .header-action {
+        margin-left: auto;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767.98px) {
+}
