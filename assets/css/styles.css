@@ -150,7 +150,7 @@ button {
 .logo__circle::after {
     content: "";
     display: inline-block;
-    border-radius: 50%;
+    border-radius: 50%; 
 }
 
 .logo__circle::before {
