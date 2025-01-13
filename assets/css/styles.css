@@ -63,6 +63,22 @@ button {
     opacity: 0.9;
 }
 
+.cliptext {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.cliptext-2 {
+    -webkit-line-clamp: 2;
+}
+
+.cliptext-3 {
+    -webkit-line-clamp: 3;
+}
+
 .section-heading {
     color: #10375c;
     font-family: Sora;
