@@ -43,8 +43,18 @@
             <div class="container">
                 <!-- Header top -->
                 <div class="header-top">
+                    <!-- Menu toggle -->
+                    <label class="menu-toggle" for="menu-mobile__input">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                fill="currentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
+
                     <!-- Logo -->
-                    <a class="logo" href="#top-page">
+                    <a class="logo" href="">
                         <div class="logo__inner">
                             <span class="logo__circle"></span>
                             <span class="logo__text">
@@ -56,7 +66,7 @@
 
                     <!-- Navbar -->
                     <nav class="navbar">
-                        <ul class="navbar__list">
+                        <ul id="menu-pc" class="navbar__list">
                             <li class="navbar__item">
                                 <a href="#top-page" class="navbar__link navbar__link--active">Home</a>
                             </li>
@@ -80,6 +90,43 @@
                 </div>
             </div>
         </header>
+
+        <!-- Header tablet & mobile -->
+        <header class="mobile-header">
+            <input type="checkbox" id="menu-mobile__input" class="menu-mobile__input" hidden />
+            <label class="menu-overlay" for="menu-mobile__input"></label>
+            <div class="menu-drawer">
+                <!-- Button close menu drawer -->
+                <label class="menu-drawer__close-btn" for="menu-mobile__input">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path
+                            fill="currentColor"
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        />
+                    </svg>
+                </label>
+
+                <!-- Logo -->
+                <a class="logo" href="">
+                    <div class="logo__inner">
+                        <span class="logo__circle"></span>
+                        <span class="logo__text">
+                            <span class="logo__branch">shine</span>
+                            <span class="logo__branch logo__branch--small">smile</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Menu mobile -->
+                <ul id="menu-mobile"></ul>
+
+                <!-- Menu auth buttons -->
+                <div class="menu-auth-btns show-on-mobile">
+                    <a href="#!" class="btn auth-btn__login">Log In</a>
+                    <a href="#!" class="btn auth-btn__signup">Sign Up</a>
+                </div>
+            </div>
+        </header>
         <main>
             <!-- Hero -->
             <section class="hero">
@@ -92,8 +139,8 @@
                                 Exceptional dental care for all ages. Your great smile begins with a great dentist.
                             </p>
                             <div class="hero__row">
-                                <a href="#!" class="btn">Book Online</a>
-                                <span class="hero__phone">or call (123) 456-7890</span>
+                                <a href="#!" class="btn">Book online</a>
+                                <a href="tel:+1234567890" class="hero__phone">or call (123) 456-7890</a>
                             </div>
                         </section>
 
@@ -140,7 +187,7 @@
                                         </svg>
                                     </figure>
                                     <div class="service-item__body">
-                                        <h3 class="service-item__heading">Oral Surgery</h3>
+                                        <h3 class="service-item__heading">Oral surgery</h3>
                                         <p class="service-item__desc">
                                             Everything you expect and then some. Cleanings, fillings, and x-rays.
                                         </p>
@@ -164,7 +211,7 @@
                                         </svg>
                                     </figure>
                                     <div class="service-item__body">
-                                        <h3 class="service-item__heading">Wisdom Teeth Removal</h3>
+                                        <h3 class="service-item__heading">Wisdom teeth removal</h3>
                                         <p class="service-item__desc">
                                             Everything you expect and then some. Cleanings, fillings, and x-rays.
                                         </p>
@@ -188,14 +235,14 @@
                                         </svg>
                                     </figure>
                                     <div class="service-item__body">
-                                        <h3 class="service-item__heading">Preventative Dentistry</h3>
+                                        <h3 class="service-item__heading">Preventative dentistry</h3>
                                         <p class="service-item__desc">
                                             Everything you expect and then some. Cleanings, fillings, and x-rays.
                                         </p>
                                     </div>
                                 </section>
                             </div>
-                            <a href="#!" class="btn">All Services</a>
+                            <a href="#!" class="btn service__btn">All Services</a>
                         </div>
                     </div>
                 </div>
@@ -204,10 +251,12 @@
             <!-- Work -->
             <section id="work" class="work">
                 <div class="container">
-                    <h2 class="section-heading">How it works</h2>
-                    <p class="section-desc">
-                        Exceptional dental care for all ages. Your great smile begins with a great dentist.
-                    </p>
+                    <div class="work__content">
+                        <h2 class="section-heading">How it works</h2>
+                        <p class="section-desc work__desc">
+                            Exceptional dental care for all ages. Your great smile begins with a great dentist.
+                        </p>
+                    </div>
                     <div class="work__list">
                         <!-- Work item 1 -->
                         <section class="work-item">
@@ -229,7 +278,7 @@
                                 <p class="work-item__desc">
                                     Search a doctor by education, qualifications or experience-contact for inquiry.
                                 </p>
-                                <a href="#!" class="work-item__more">Learn More</a>
+                                <a href="#!" class="work-item__more">Learn more</a>
                             </div>
                         </section>
                         <!-- Work item 2 -->
@@ -257,7 +306,7 @@
                                 <p class="work-item__desc">
                                     Search a doctor by education, qualifications or experience-contact for inquiry.
                                 </p>
-                                <a href="#!" class="work-item__more">Learn More</a>
+                                <a href="#!" class="work-item__more">Learn more</a>
                             </div>
                         </section>
                         <!-- Work item 3 -->
@@ -292,7 +341,7 @@
                                 <p class="work-item__desc">
                                     Search a doctor by education, qualifications or experience-contact for inquiry.
                                 </p>
-                                <a href="#!" class="work-item__more">Learn More</a>
+                                <a href="#!" class="work-item__more">Learn more</a>
                             </div>
                         </section>
                     </div>
@@ -332,37 +381,37 @@
                     <div class="dentist__list">
                         <!-- Dentist item 1 -->
                         <article class="dentist-item">
-                            <div class="dentist-item__images">
+                            <a href="" class="dentist-item__images">
                                 <img src="./assets/img/dentist-01.png" alt="" class="dentist-item__img" />
-                            </div>
-                            <h3 class="dentist-item__heading">Dr. Essence Page</h3>
+                            </a>
+                            <h3><a class="dentist-item__heading" href="">Dr. Essence Page</a></h3>
                             <p class="dentist-item__desc">DDS, California - Linda University</p>
                         </article>
 
                         <!-- Dentist item 2 -->
                         <article class="dentist-item">
-                            <div class="dentist-item__images">
+                            <a href="" class="dentist-item__images">
                                 <img src="./assets/img/dentist-02.png" alt="" class="dentist-item__img" />
-                            </div>
-                            <h3 class="dentist-item__heading">Dr. Essence Page</h3>
+                            </a>
+                            <h3><a class="dentist-item__heading" href="">Dr. Essence Page</a></h3>
                             <p class="dentist-item__desc">DDS, California - Linda University</p>
                         </article>
 
                         <!-- Dentist item 3 -->
                         <article class="dentist-item">
-                            <div class="dentist-item__images">
+                            <a href="" class="dentist-item__images">
                                 <img src="./assets/img/dentist-03.png" alt="" class="dentist-item__img" />
-                            </div>
-                            <h3 class="dentist-item__heading">Dr. Essence Page</h3>
+                            </a>
+                            <h3><a class="dentist-item__heading" href="">Dr. Essence Page</a></h3>
                             <p class="dentist-item__desc">DDS, California - Linda University</p>
                         </article>
 
                         <!-- Dentist item 4 -->
                         <article class="dentist-item">
-                            <div class="dentist-item__images">
+                            <a href="" class="dentist-item__images">
                                 <img src="./assets/img/dentist-04.png" alt="" class="dentist-item__img" />
-                            </div>
-                            <h3 class="dentist-item__heading">Dr. Essence Page</h3>
+                            </a>
+                            <h3><a class="dentist-item__heading" href="">Dr. Essence Page</a></h3>
                             <p class="dentist-item__desc">DDS, California - Linda University</p>
                         </article>
                     </div>
@@ -436,7 +485,7 @@
                     <div class="news__row">
                         <div class="news__content">
                             <h2 class="section-heading">Read Latest News & Events.</h2>
-                            <a href="#!" class="news__more">Read All Blog</a>
+                            <a href="#!" class="news__more">Read all blog</a>
                             <div class="section-controls">
                                 <button class="section-control__btn">
                                     <svg
@@ -526,8 +575,8 @@
                     <div class="appointment__inner">
                         <h2 class="section-heading appointment__heading">Always welcoming new patients</h2>
                         <p class="section-desc appointment__desc">
-                            Take control of your dental health and get the personalized care you deserve. Call (541)
-                            772-8846 to schedule
+                            Take control of your dental health and get the personalized care you deserve. Call
+                            <a class="appointment__link" href="tel:+5417728846">(541) 772-8846</a> to schedule
                         </p>
                         <a href="#!" class="btn">Appointment</a>
                     </div>
@@ -541,7 +590,7 @@
                 <div class="footer__row">
                     <div class="footer__column">
                         <!-- Logo -->
-                        <a class="logo" href="#top-page">
+                        <a class="logo" href="">
                             <div class="logo__inner">
                                 <span class="logo__circle"></span>
                                 <span class="logo__text">
@@ -598,54 +647,60 @@
                         </ul>
                     </div>
                     <div class="footer__column">
-                        <h3 class="footer__heading">Stay In Touch</h3>
-                        <div class="footer-social">
-                            <a href="#!" class="footer-social-item">
-                                <svg
-                                    class="footer-social-item__icon"
-                                    width="6"
-                                    height="12"
-                                    viewBox="0 0 6 12"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M3.98981 11.9358V6.0302H5.76473L6 3.9517H3.98981L3.9928 2.91132C3.9928 2.3692 4.0477 2.07885 4.87783 2.07885H5.98755V0H4.21224C2.07977 0 1.32931 1.00825 1.32931 2.70405V3.95186H0V6.03055H1.32931V11.8521C1.84718 11.9489 2.38257 12 2.93075 12C3.28487 12 3.63863 11.9786 3.98981 11.9358Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </a>
-                            <a href="#!" class="footer-social-item">
-                                <svg
-                                    class="footer-social-item__icon"
-                                    width="16"
-                                    height="12"
-                                    viewBox="0 0 16 12"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M16 1.42062C15.405 1.66154 14.771 1.82123 14.11 1.89877C14.79 1.524 15.309 0.935077 15.553 0.225231C14.919 0.574154 14.219 0.820615 13.473 0.958154C12.871 0.366462 12.013 0 11.077 0C9.261 0 7.799 1.36062 7.799 3.02862C7.799 3.26862 7.821 3.49938 7.875 3.71908C5.148 3.59631 2.735 2.38985 1.114 0.552C0.831 1.00523 0.665 1.524 0.665 2.08246C0.665 3.13108 1.25 4.06062 2.122 4.59877C1.595 4.58954 1.078 4.44831 0.64 4.22585C0.64 4.23508 0.64 4.24708 0.64 4.25908C0.64 5.73046 1.777 6.95262 3.268 7.23415C3.001 7.30154 2.71 7.33385 2.408 7.33385C2.198 7.33385 1.986 7.32277 1.787 7.28215C2.212 8.48123 3.418 9.36277 4.852 9.39138C3.736 10.1972 2.319 10.6828 0.785 10.6828C0.516 10.6828 0.258 10.6717 0 10.6412C1.453 11.5062 3.175 12 5.032 12C11.068 12 14.368 7.38462 14.368 3.384C14.368 3.25015 14.363 3.12092 14.356 2.99262C15.007 2.56615 15.554 2.03354 16 1.42062Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </a>
-                            <a href="#!" class="footer-social-item">
-                                <svg
-                                    class="footer-social-item__icon"
-                                    width="13"
-                                    height="12"
-                                    viewBox="0 0 13 12"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M0 1.39394C0 0.989891 0.146401 0.656558 0.439189 0.393939C0.731978 0.131309 1.11262 0 1.58108 0C2.04119 0 2.41344 0.129285 2.69788 0.387879C2.99066 0.654545 3.13707 1.00201 3.13707 1.4303C3.13707 1.81818 2.99486 2.14141 2.71042 2.4C2.41764 2.66667 2.03282 2.8 1.55598 2.8H1.54344C1.08333 2.8 0.711072 2.66667 0.426641 2.4C0.142209 2.13333 0 1.79798 0 1.39394ZM0.163127 12V3.90303H2.94884V12H0.163127ZM4.49228 12H7.27799V7.47879C7.27799 7.19595 7.31146 6.97777 7.37838 6.82424C7.49549 6.54949 7.67326 6.31716 7.91168 6.12727C8.1501 5.93737 8.44916 5.84242 8.80888 5.84242C9.74582 5.84242 10.2143 6.45252 10.2143 7.67273V12H13V7.35758C13 6.16161 12.7072 5.25455 12.1216 4.63636C11.536 4.01818 10.7622 3.70909 9.80019 3.70909C8.72104 3.70909 7.88031 4.15758 7.27799 5.05455V5.07879H7.26544L7.27799 5.05455V3.90303H4.49228C4.509 4.16161 4.51737 4.96565 4.51737 6.31515C4.51737 7.66464 4.509 9.55959 4.49228 12Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
+                        <h3 class="footer__heading">Stay in touch</h3>
+                        <ul class="footer-social">
+                            <li>
+                                <a href="#!" class="footer-social-item">
+                                    <svg
+                                        class="footer-social-item__icon"
+                                        width="6"
+                                        height="12"
+                                        viewBox="0 0 6 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M3.98981 11.9358V6.0302H5.76473L6 3.9517H3.98981L3.9928 2.91132C3.9928 2.3692 4.0477 2.07885 4.87783 2.07885H5.98755V0H4.21224C2.07977 0 1.32931 1.00825 1.32931 2.70405V3.95186H0V6.03055H1.32931V11.8521C1.84718 11.9489 2.38257 12 2.93075 12C3.28487 12 3.63863 11.9786 3.98981 11.9358Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="footer-social-item">
+                                    <svg
+                                        class="footer-social-item__icon"
+                                        width="16"
+                                        height="12"
+                                        viewBox="0 0 16 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M16 1.42062C15.405 1.66154 14.771 1.82123 14.11 1.89877C14.79 1.524 15.309 0.935077 15.553 0.225231C14.919 0.574154 14.219 0.820615 13.473 0.958154C12.871 0.366462 12.013 0 11.077 0C9.261 0 7.799 1.36062 7.799 3.02862C7.799 3.26862 7.821 3.49938 7.875 3.71908C5.148 3.59631 2.735 2.38985 1.114 0.552C0.831 1.00523 0.665 1.524 0.665 2.08246C0.665 3.13108 1.25 4.06062 2.122 4.59877C1.595 4.58954 1.078 4.44831 0.64 4.22585C0.64 4.23508 0.64 4.24708 0.64 4.25908C0.64 5.73046 1.777 6.95262 3.268 7.23415C3.001 7.30154 2.71 7.33385 2.408 7.33385C2.198 7.33385 1.986 7.32277 1.787 7.28215C2.212 8.48123 3.418 9.36277 4.852 9.39138C3.736 10.1972 2.319 10.6828 0.785 10.6828C0.516 10.6828 0.258 10.6717 0 10.6412C1.453 11.5062 3.175 12 5.032 12C11.068 12 14.368 7.38462 14.368 3.384C14.368 3.25015 14.363 3.12092 14.356 2.99262C15.007 2.56615 15.554 2.03354 16 1.42062Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="footer-social-item">
+                                    <svg
+                                        class="footer-social-item__icon"
+                                        width="13"
+                                        height="12"
+                                        viewBox="0 0 13 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0 1.39394C0 0.989891 0.146401 0.656558 0.439189 0.393939C0.731978 0.131309 1.11262 0 1.58108 0C2.04119 0 2.41344 0.129285 2.69788 0.387879C2.99066 0.654545 3.13707 1.00201 3.13707 1.4303C3.13707 1.81818 2.99486 2.14141 2.71042 2.4C2.41764 2.66667 2.03282 2.8 1.55598 2.8H1.54344C1.08333 2.8 0.711072 2.66667 0.426641 2.4C0.142209 2.13333 0 1.79798 0 1.39394ZM0.163127 12V3.90303H2.94884V12H0.163127ZM4.49228 12H7.27799V7.47879C7.27799 7.19595 7.31146 6.97777 7.37838 6.82424C7.49549 6.54949 7.67326 6.31716 7.91168 6.12727C8.1501 5.93737 8.44916 5.84242 8.80888 5.84242C9.74582 5.84242 10.2143 6.45252 10.2143 7.67273V12H13V7.35758C13 6.16161 12.7072 5.25455 12.1216 4.63636C11.536 4.01818 10.7622 3.70909 9.80019 3.70909C8.72104 3.70909 7.88031 4.15758 7.27799 5.05455V5.07879H7.26544L7.27799 5.05455V3.90303H4.49228C4.509 4.16161 4.51737 4.96565 4.51737 6.31515C4.51737 7.66464 4.509 9.55959 4.49228 12Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
                         <h3 class="footer__heading">Subscribe</h3>
                         <p class="footer__desc subscribe__desc">
                             Subscribe our newsletter for the latest update of Dental care
@@ -666,5 +721,7 @@
                 </div>
             </div>
         </footer>
+
+        <script src="./assets/js/main.js"></script>
     </body>
 </html>

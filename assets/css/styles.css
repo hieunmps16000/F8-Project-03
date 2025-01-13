@@ -9,6 +9,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -47,10 +48,11 @@ button {
     padding: 0 12px;
     color: #fff;
     background: #2e80ce;
+    border-radius: 999px;
     font-size: 1.8rem;
     font-weight: 400;
-    border-radius: 999px;
     text-align: center;
+    text-transform: capitalize;
     cursor: pointer;
     border: 1px solid #2e80ce;
     outline: none;
@@ -138,6 +140,7 @@ button {
 
 .logo {
     display: flex;
+    user-select: none;
 }
 
 .logo__inner {
@@ -284,6 +287,10 @@ button {
     line-height: 1.67;
 }
 
+.hero__phone:hover {
+    opacity: 0.9;
+}
+
 .hero__images {
     display: flex;
     align-items: center;
@@ -381,6 +388,7 @@ button {
     color: #10375c;
     font-size: 1.8rem;
     font-weight: 600;
+    text-transform: capitalize;
 }
 
 .service-item__desc {
@@ -445,10 +453,16 @@ button {
 .work-item__more {
     margin-top: 18px;
     display: inline-block;
-    color: #2e80ce;
     font-size: 1.6rem;
     font-weight: 400;
+    text-transform: capitalize;
     line-height: 1.75;
+    color: #575f66;
+    transition: color 0.25s;
+}
+
+.work-item:hover .work-item__more {
+    color: #2e80ce;
 }
 
 /* Feature */
@@ -499,8 +513,13 @@ button {
     padding: 85px 0;
 }
 
-.dentist .dentist__link {
+.dentist__header {
+    text-align: center;
+}
+
+.dentist__link {
     margin-top: 38px;
+    text-transform: initial;
 }
 
 .dentist__list {
@@ -515,6 +534,7 @@ button {
 }
 
 .dentist-item__images {
+    display: block;
     background: #eaf6ff;
     padding-top: 28px;
     border-radius: 6px;
@@ -531,11 +551,12 @@ button {
 }
 
 .dentist-item__heading {
+    display: block;
     margin-top: 12px;
     color: #10375c;
     text-align: center;
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.75;
 }
 
@@ -571,6 +592,11 @@ button {
 
 .install__content {
     max-width: 586px;
+}
+
+.install .section-heading {
+    width: 489px;
+    max-width: 100%;
 }
 
 .install .section-heading,
@@ -610,10 +636,11 @@ button {
 .news__more {
     display: inline-block;
     margin: 28px 0;
+    line-height: 1.55;
     color: #10375c;
     font-size: 1.8rem;
     font-weight: 600;
-    line-height: 1.55;
+    text-transform: capitalize;
     text-underline-offset: 5px;
     text-decoration-line: underline;
 }
@@ -634,7 +661,6 @@ button {
 
 .news-item:hover {
     box-shadow: 0px 18px 50px 0px rgba(0, 0, 0, 0.05);
-    transform: translateY(-8px);
 }
 
 .news-item:hover .news-item__body {
@@ -645,12 +671,22 @@ button {
     color: #2e80ce;
 }
 
+.news-item figure {
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
 .news-item__img {
     display: block;
     width: 100%;
     height: 172px;
     object-fit: cover;
     border-radius: 12px 12px 0 0;
+    transition: 0.25s;
+}
+
+.news-item__img:hover {
+    scale: 1.1;
 }
 
 .news-item__body {
@@ -684,7 +720,7 @@ button {
 
 /* Appointment */
 .appointment {
-    padding: 85px 170px;
+    padding: 85px 0 170px 0;
 }
 
 .appointment__inner {
@@ -717,6 +753,10 @@ button {
     margin: 18px auto 38px;
 }
 
+.appointment__link {
+    color: currentColor;
+}
+
 /* Footer */
 .footer {
     padding-top: 100px;
@@ -743,6 +783,7 @@ button {
     color: #fff;
     font-size: 1.6rem;
     font-weight: 600;
+    text-transform: capitalize;
     line-height: 1.75;
 }
 
@@ -764,9 +805,11 @@ button {
     font-weight: 400;
     line-height: 1.85;
     white-space: nowrap;
+    transition: color 0.25s;
 }
 
 .footer__item-link:hover {
+    color: #fff;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -795,6 +838,7 @@ button {
 }
 
 .subscribe__desc {
+    margin-top: 20px;
     max-width: 273px;
     font-size: 1.4rem;
 }
@@ -810,6 +854,7 @@ button {
     width: 212px;
     height: 46px;
     color: #fff;
+    font-size: 1.4rem;
     outline: none;
     border-radius: 4px;
     border: 1px solid #406181;

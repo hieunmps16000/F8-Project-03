@@ -1,14 +1,15 @@
 /* PC */
 @media screen and (min-width: 992px) {
+    .show-on-mobile,
+    .mobile-header,
+    .menu-toggle {
+        display: none;
+    }
 }
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-}
-
-/* Tablet and mobile */
-@media screen and (max-width: 991.98px) {
-    .navbar {
+    .show-on-mobile {
         display: none;
     }
 
@@ -23,11 +24,480 @@
         transform: translate(-50%, -50%);
     }
 
+    .menu-drawer {
+        padding: 30px;
+    }
+
+    .menu-drawer .logo {
+        padding: 0 30px;
+    }
+
+    .navbar__link--active,
+    .navbar__link:hover,
+    .header-action__login:hover {
+        color: #333;
+    }
+
+    .footer__row {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        padding-bottom: 28px;
+    }
+}
+
+/* Tablet and mobile */
+@media screen and (max-width: 991.98px) {
+    .navbar {
+        display: none;
+    }
+
     .header-action {
         margin-left: auto;
+    }
+
+    .menu-toggle {
+        width: 26px;
+        color: #fff;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.25s;
+    }
+
+    .menu-mobile__input:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        inset: 0 40% 0 0;
+        z-index: 2;
+        background: #fff;
+        transform: translateX(-100%);
+        transition: transform 0.25s;
+    }
+
+    .menu-mobile__input:checked ~ .menu-drawer {
+        transform: translateX(0);
+    }
+
+    .menu-drawer__close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 18px;
+        color: #666;
+        font-size: 2.4rem;
+    }
+
+    .menu-drawer__close-btn:hover {
+        opacity: 0.9;
+    }
+
+    #menu-mobile {
+        margin-top: 48px;
+    }
+
+    .menu-drawer .logo__branch {
+        color: #10375c;
+    }
+
+    .navbar__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        padding: 12px 30px;
+        color: #333;
+    }
+
+    .navbar__link--active::before {
+        display: none;
+        position: static;
+        border-radius: 0;
+    }
+
+    .navbar__link--active,
+    .navbar__link:hover {
+        color: #fff;
+    }
+
+    .navbar__link::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar__item:first-child .navbar__link::before {
+        background: url(../icons/home.png) top center / contain no-repeat;
+    }
+
+    .navbar__item:nth-child(2) .navbar__link::before {
+        background: url(../icons/services.png) top center / contain no-repeat;
+    }
+
+    .navbar__item:nth-child(3) .navbar__link::before {
+        background: url(../icons/about.png) top center / contain no-repeat;
+    }
+
+    .navbar__item:nth-child(4) .navbar__link::before {
+        background: url(../icons/doctors.png) top center / contain no-repeat;
+    }
+
+    .navbar__link--active::before {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(100%) saturate(0%) hue-rotate(261deg) brightness(102%)
+            contrast(105%);
+    }
+
+    .navbar__link--active::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        background: #2e80ce;
+    }
+
+    .hero__inner {
+        flex-direction: column-reverse;
+        row-gap: 60px;
+    }
+
+    .hero__media,
+    .hero__content {
+        width: 100%;
+    }
+
+    .hero__images {
+        justify-content: center;
+    }
+
+    .hero__heading {
+        font-size: 6rem;
+    }
+
+    .hero__heading {
+        text-align: center;
+    }
+
+    .hero__desc {
+        width: 64%;
+        text-align: center;
+        margin: 24px auto 0 auto;
+    }
+
+    .hero__row {
+        justify-content: center;
+    }
+
+    .service-row {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .service__btn {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .work__list {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .work-item__desc {
+        width: 360px;
+        margin: 28px auto 0 auto;
+    }
+
+    .work__content {
+        text-align: center;
+    }
+
+    .work-item:hover {
+        transform: none;
+    }
+
+    .work__desc {
+        margin: 18px auto 0 auto;
+    }
+
+    .feature__row {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
+    .feature__media,
+    .feature__content {
+        width: 100%;
+    }
+
+    .dentist__header {
+        text-align: center;
+    }
+
+    .dentist__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .install .container {
+        max-width: 100%;
+    }
+
+    .install__inner {
+        gap: 40px;
+    }
+
+    .install__img {
+        width: 248px;
+        height: auto;
+    }
+
+    .install .section-heading {
+        width: 100%;
+        font-size: 3.4rem;
+    }
+
+    .install .section-desc {
+        max-width: 100%;
+    }
+
+    .news__row {
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    .news__content,
+    .news__list {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .appointment {
+        padding: 85px 0;
     }
 }
 
 /* Mobile */
 @media screen and (max-width: 767.98px) {
+    .container {
+        max-width: calc(100% - 24px);
+    }
+
+    .section-heading {
+        font-size: 3.2rem;
+    }
+
+    .section-desc {
+        font-size: 1.6rem;
+    }
+
+    .header-top {
+        flex-direction: row-reverse;
+    }
+
+    .menu-drawer .logo {
+        padding: 0 20px;
+    }
+
+    #menu-mobile {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 62%;
+    }
+
+    .menu-drawer {
+        inset: 0 20% 0 0;
+        padding: 20px;
+    }
+
+    .navbar__link {
+        padding: 12px 20px;
+    }
+
+    .menu-auth-btns {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+    }
+
+    .menu-auth-btns .btn {
+        --height: 48px;
+        font-size: 1.6rem;
+    }
+
+    .auth-btn__signup {
+        margin-top: 12px;
+        background: #fff;
+        color: #2e80ce;
+    }
+
+    .header-action {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 20px;
+    }
+
+    .hero__inner {
+        row-gap: 48px;
+    }
+
+    .hero__images {
+        flex-direction: column;
+    }
+
+    .hero__img {
+        width: 100%;
+        height: 380px;
+    }
+
+    .hero__img:first-child {
+        position: static;
+    }
+
+    .hero__img:last-child {
+        display: none;
+    }
+
+    .hero__heading {
+        font-size: 3.2rem;
+    }
+
+    .hero__desc {
+        width: 100%;
+        font-size: 1.6rem;
+    }
+
+    .hero__row {
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    .hero__phone {
+        margin-left: 0;
+    }
+
+    .service,
+    .work,
+    .feature,
+    .dentist,
+    .news,
+    .appointment {
+        padding: 64px 0;
+    }
+
+    .service__img {
+        width: 100%;
+    }
+
+    .service-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-item + .service-item {
+        margin-top: 48px;
+    }
+
+    .service-item__body {
+        margin: 20px 0 0;
+    }
+
+    .work-item > div {
+        padding: 20px;
+    }
+
+    .work-item__desc {
+        width: 100%;
+    }
+
+    .feature__content {
+        text-align: center;
+    }
+
+    .feature__media {
+        padding-bottom: 0;
+    }
+
+    .feature__img {
+        width: 100%;
+    }
+
+    .feature__img:last-child {
+        display: none;
+    }
+
+    .dentist__list {
+        grid-template-columns: 1fr;
+    }
+
+    .install__img {
+        display: none;
+    }
+
+    .install {
+        margin: 48px 0;
+    }
+
+    .install__inner {
+        display: block;
+        padding: 32px 24px;
+    }
+
+    .install__content,
+    .install .section-desc {
+        max-width: 100%;
+    }
+
+    .install .section-heading {
+        font-size: 3.2rem;
+    }
+
+    .news__list {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+
+    .news-item__img {
+        height: 260px;
+    }
+
+    .appointment__inner {
+        padding: 28px 20px;
+    }
+
+    .footer {
+        padding-top: 48px;
+    }
+
+    .footer__row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 28px;
+    }
 }
